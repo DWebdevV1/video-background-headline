@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+section:nth-of-type(1) {
+    background-color: #702d4d;
+}
+
+section:nth-of-type(2) {
+    background-color: #506b1b;
+}
+
+section:nth-of-type(3) {
+    background-color: #7b591c;
+}
+
+/* ############################## HEADER IMAGE ############################## */
+
+.header-img {
+    background: #69a5b6;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header-img__media {
+    background: orange url("https://wallpaperaccess.com/full/3105691.jpg") center center/cover no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.header-img__content {
+    position: absolute;
+    padding: 4rem 2rem;
+    background-color: rgba(0, 0, 0, 0.66);
+    color: white;
+    text-align: center;
+    width: 80%;
+}
+
+/* ############################## HEADER VIDEO ############################## */
+
+.header-vid {
+    height: 100vh;
+    width: 100%;
+    background: #69a5b6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header-vid__media {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.header-vid__media video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(66%);
+    z-index: 0;
+}
+
+.header-vid__content {
+    color: white;
+    z-index: 1;
+    text-align: center;
+    width: 80%;
+    padding: 4rem 2rem;
+    background-color: rgba(0, 0, 0, 0.66);
+}
+
+
+/* ############################## VIDEO ASPECT RATIO ############################## */
+
+.video-wrapper {
+    position: relative;
+}
+
+.video__container {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.video__container video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.video__container__content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem 4rem;
+    color: white;
+    text-align: center;
+}
+
+/* ############################## HEADER MEDIA QUERY ############################## */
+
+
+@media screen and (max-width: 760px) {
+    .header-img,
+    .header-img__media,
+    .header-img__content,
+    .header-vid__media,
+    .header-vid__media video,
+    .header-vid__content,
+    .header-vid,
+    .video__container__content{
+        position: static;
+    }
+
+    .header-img__content, .header-vid__content {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 1)
+    }
+
+    .video__container__content {
+        transform: translate(0, 0);
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 1);
+    }
+
+    .header-vid__media video {
+        width: 100%;
+        height: 100%;
+    }
+
+    .header-img__content__title,
+    .header-img__content__subtitle,
+    .header-vid__content__title,
+    .header-vid__content__subtitle {
+        margin-bottom: 1rem;
+    }
+}
